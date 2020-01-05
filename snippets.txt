@@ -6,8 +6,8 @@ Product
     "product_id":"AMDT3",
     "tags":["systems"],
     "price":2000,
-    "media":["/image1.png"],
     "quantity":50,
+    "media":["/image1.png"],
     "info":
    			 "AMD Ryzen Threadripper Processors enable higher and more consistent performance for creators. Render. Stream. Compile. Encode"
 }    

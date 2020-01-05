@@ -60,5 +60,55 @@ router.post('/add',(req,res)=>{
 	// res.json("DONE")
 })
 
+router.put('/:id',(req,res)=>{
+const new_product = {
+	name:req.body.name,
+    product_id:req.body.product_id,
+    tags:req.body.tags,
+    price:req.body.price,	
+    quantity:req.body.quantity,
+    media:req.body.media,
+    info:req.body.info
+}
+	// console.log((req.params.id).toString())
+
+	let arg = (req.params.id).toString().toUpperCase()
+	const validate = product_schema.validate(new_product)
+
+	if(validate.error == null){
+		productmodel.updateOne({product_id:{$eq: arg}},new_product,(err,result)=>{
+			if(err){
+				res.json({err})
+			}
+			else{
+				res.json(result)
+			}
+		})
+
+		// postmodel.find({threadid:{$eq : "278"}},(err,resp)=>{
+		// 	err ? res.json(err) : res.json(resp)
+		// })
+
+		// postmodel.update({"278":"278"},{$set:{new_post}},(err,result)=>{
+		// 	err ? res.json(err) : res.json(result)
+		// })
+	}
+	else{																			
+		res.json(validate.error)
+		}
+});
+
+router.delete('/:id',(req,res)=>{
+	let input_id = (req.params.id).toString().toUpperCase()
+	productmodel.deleteOne({product_id:input_id},(err,result)=>{
+		if(err){
+			res.json(err)
+		}
+		else{
+			res.json(result)
+		}
+	})
+})
+
 
 module.exports = router
