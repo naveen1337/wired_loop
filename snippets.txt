@@ -11,3 +11,18 @@ Product
     "info":
    			 "AMD Ryzen Threadripper Processors enable higher and more consistent performance for creators. Render. Stream. Compile. Encode"
 }    
+
+{
+    "username": "user1",
+    "name":"UserOne",
+    "email":"user@user.com",
+    "phone":987654321,
+    "password":"secret",
+    "cart":["test"],
+    "track":"ABCD"
+}
+
+{
+  "email":"user@user.com",
+  "password" : "secret"
+}

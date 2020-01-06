@@ -99,7 +99,7 @@ const new_product = {
 });
 
 router.delete('/:id',(req,res)=>{
-	let input_id = (req.params.id).toString().toUpperCase()
+	let input_id = (req.params.id).toString().
 	productmodel.deleteOne({product_id:input_id},(err,result)=>{
 		if(err){
 			res.json(err)

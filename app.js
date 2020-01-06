@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Joi = require('@hapi/joi');
 const product = require('./routes/product')
+const user = require('./routes/user');
 
 const app = express();
 app.use(express.json()); 
@@ -16,6 +17,7 @@ db.on('error', ()=>console.log("DB Connection Error"));
 db.once('open',()=>console.log('Connction DB Done'));
 
 app.use('/product',product)
+app.use('/user',user)
 
 app.get('/', (req, res)=>{
 	res.json({
