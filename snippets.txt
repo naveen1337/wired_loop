@@ -17,7 +17,7 @@ Product
     "name":"UserOne",
     "email":"user@user.com",
     "phone":987654321,
-    "password":"secret",
+    "password":"test",
     "cart":["test"],
     "track":"ABCD"
 }
@@ -26,3 +26,7 @@ Product
   "email":"user@user.com",
   "password" : "secret"
 }
+
+DEVELOPEMENT TOKEN:
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMTM0ZjgwYmQwMGFhNjkzOGQwNGI4NSIsImVtYWlsIjoidXNlckB1c2VyLmNvbSIsImlhdCI6MTU3ODMzMzM2OSwiZXhwIjoxNTgxOTMzMzY5fQ.ag7VWFlRUkInSpfi_PnubHm8l0sEgZhTd_owG0RWSmc

@@ -3,6 +3,7 @@ const router = express.Router()
 const Joi = require('@hapi/joi');
 const mongoose = require('mongoose')
 const productmodel = require('../models/productmodel');
+const auth = require('../middleware/checkauth.js')
 
 // JOI validation
 const product_schema = Joi.object().keys({
@@ -29,7 +30,7 @@ router.get('/', (req, res)=>{
 	})
 })
 
-router.post('/add',(req,res)=>{
+router.post('/add',auth,(req,res)=>{
 	const new_product = {
 	name:req.body.name,
     product_id:req.body.product_id,
@@ -60,7 +61,7 @@ router.post('/add',(req,res)=>{
 	// res.json("DONE")
 })
 
-router.put('/:id',(req,res)=>{
+router.put('/:id', auth,(req,res)=>{
 const new_product = {
 	name:req.body.name,
     product_id:req.body.product_id,
@@ -98,8 +99,8 @@ const new_product = {
 		}
 });
 
-router.delete('/:id',(req,res)=>{
-	let input_id = (req.params.id).toString().
+router.delete('/:id',auth,(req,res)=>{
+	let input_id = (req.params.id).toString();
 	productmodel.deleteOne({product_id:input_id},(err,result)=>{
 		if(err){
 			res.json(err)
